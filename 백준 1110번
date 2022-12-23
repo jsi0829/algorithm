@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() 
+{
+	int a, b, e;
+	int g;
+	int h = 0;//count
+	scanf_s("%d", &a);
+	e = a;//루프로 들어가기전 a값 e에 저장
+	while (1) 
+	{
+		
+		g = a * 10 + a % 10;//자릿수 들의 합
+		a = (a % 10) * 10 + g % 10;
+		h++;//사이클 증가
+		if (e == a) {
+			break;
+		}
+	}
+	printf("%d", h);
+	return 0;
+}
