@@ -1,0 +1,57 @@
+import sys
+input = sys.stdin.readline
+
+n = [0] * 10001
+a = 0
+
+def push(addnum):
+    global a
+    n[a] = addnum
+    a += 1
+
+def pop():
+    global a
+    if a == 0:
+        return -1
+    a -= 1      
+    val = n[a]  
+    return val  
+
+def size():
+    print(a)
+
+def empty():
+    if a == 0:
+        print(1)
+    else:
+        print(0)
+
+def top():
+    if a == 0:
+        print(-1)
+    else:
+        print(n[a-1])
+
+
+line_n = input()
+if line_n:
+    N = int(line_n)
+
+    # N번만큼 반복
+    for _ in range(N):
+        line = input().split()
+        if not line:
+            continue
+            
+        cmd = line[0]
+
+        if cmd == "push":
+            push(int(line[1]))
+        elif cmd == "pop":
+            print(pop())
+        elif cmd == "size":
+            size()
+        elif cmd == "empty":
+            empty()
+        elif cmd == "top":
+            top()
