@@ -1,0 +1,17 @@
+import sys
+input = sys.stdin.readline
+
+number = input()
+
+N = int(number)
+a = 0
+
+for _ in range(N):
+    
+    sentence = input()
+    result = sentence.split()
+    
+    for i in range(len(result)):
+        result[i] = result[i][::-1]
+        print(result[i])
+        
